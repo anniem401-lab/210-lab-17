@@ -1,3 +1,10 @@
+//COMSC-210 | Lab 17 | Annie Morales
+// IDE used: Visual Studio Code
+
+// This modified program will leverage functions to peform these linked list operations:
+// adding a node to the front; adding a node to the tail; deleting a node' inserting a node;
+// and deleting the entire linked list.
+
 #include <iostream>
 using namespace std;
 
@@ -9,6 +16,13 @@ struct Node {
 };
 
 void output(Node *);
+
+// Function prototypes
+void addToFront(Node *&, float);
+void addToTail(Node *&, float);
+void deleteNode(Node *&, float);
+void insertNode(Node *&, float);
+void deleteList(Node *&);
 
 int main() {
     Node *head = nullptr;
