@@ -28,10 +28,12 @@ void deleteList(Node *&);
 int main() {
     Node *head = nullptr;
     int count = 0;
+    srand(time(0)); // seed random number generator
 
     cout << endl;
     // create a linked list of size SIZE with random numbers 0-99
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++) 
+    {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
         
@@ -48,6 +50,9 @@ int main() {
         }
     }
     output(head);
+
+    cout << "Note to user: only positive numbers will be added to the list.\n" 
+         << "If a negative number is entered, the program will stop and you'll have to restart over.\n" << endl;
 
     // Adds a node to the front of the list
     cout << "Enter any number value to add to the front of the list: ";
@@ -111,7 +116,7 @@ void addToFront(Node *&head, float value)
     // Checks if number is positive
     if (value >= 0) 
     {
-        cout << value << " added to the front of the list.\n";
+        cout << value << " added to the front of the list.\n" << endl;
     } 
     else 
     {
@@ -144,7 +149,7 @@ void addToTail(Node *&head, float value)
     // Checks if number is positive
     if (value >= 0) 
     {
-        cout << value << " added to the front of the list.\n";
+        cout << value << " added to the tail of the list.\n" << endl;
     } 
     else 
     {
@@ -199,7 +204,7 @@ void insertNode(Node *&head, float value)
     // Checks if number is positive
     if (value >= 0) 
     {
-        cout << value << " added to the list.\n";
+        cout << value << " added to the list.\n" << endl;
     } 
     else 
     {
