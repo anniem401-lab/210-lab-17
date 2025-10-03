@@ -55,6 +55,30 @@ int main() {
     addToFront(head, frontValue);
     output(head);
 
+    // Adds a node to the tail of the list
+    cout << "Enter a value to add to the tail of the list: ";
+    float tailValue;
+    cin >> tailValue;
+    addToTail(head, tailValue);
+    output(head);
+
+    // Deletes a node from the list
+    cout << "Enter a value to delete from the list: ";
+    float deleteValue;
+    cin >> deleteValue;
+    deleteNode(head, deleteValue);
+    output(head);
+
+    // Inserts a node at any position in the list
+    cout << "Enter a value to insert into the list: ";
+    float insertValue;
+    cin >> insertValue;
+    insertNode(head, insertValue);
+    output(head);
+
+    // Deletes the entire linked list
+    deleteList(head);
+
     return 0;
 }
 
@@ -87,11 +111,15 @@ void addToTail(Node *&head, float value)
     Node *newNode = new Node;
     newNode->value = value;
     newNode->next = nullptr;
-    if (!head) {
+    if (!head) 
+    {
         head = newNode;
-    } else {
+    } 
+    else 
+    {
         Node *current = head;
-        while (current->next) {
+        while (current->next) 
+        {
             current = current->next;
         }
         current->next = newNode;
