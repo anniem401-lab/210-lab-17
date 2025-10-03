@@ -29,6 +29,7 @@ int main() {
     Node *head = nullptr;
     int count = 0;
 
+    cout << endl;
     // create a linked list of size SIZE with random numbers 0-99
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
@@ -63,7 +64,7 @@ int main() {
     output(head);
 
     // Deletes a node from the list
-    cout << "Enter a value to delete from the list: ";
+    cout << "Enter a value to delete from the list (Example: 42): ";
     float deleteValue;
     cin >> deleteValue;
     deleteNode(head, deleteValue);
@@ -78,6 +79,9 @@ int main() {
 
     // Deletes the entire linked list
     deleteList(head);
+    head = nullptr;
+    cout << "List deleted.\n";
+    cout << endl;
 
     return 0;
 }
