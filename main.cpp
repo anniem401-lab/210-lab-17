@@ -50,28 +50,28 @@ int main() {
     output(head);
 
     // Adds a node to the front of the list
-    cout << "Enter a value to add to the front of the list: ";
+    cout << "Enter any number value to add to the front of the list: ";
     float frontValue;
     cin >> frontValue;
     addToFront(head, frontValue);
     output(head);
 
     // Adds a node to the tail of the list
-    cout << "Enter a value to add to the tail of the list: ";
+    cout << "Enter any number value to add to the tail of the list: ";
     float tailValue;
     cin >> tailValue;
     addToTail(head, tailValue);
     output(head);
 
     // Deletes a node from the list
-    cout << "Enter a value to delete from the list (Example: 42): ";
+    cout << "Enter any number value to delete from the list (Example: 42): ";
     float deleteValue;
     cin >> deleteValue;
     deleteNode(head, deleteValue);
     output(head);
 
-    // Inserts a node at any position in the list
-    cout << "Enter a value to insert into the list: ";
+    // Inserts a node into the list
+    cout << "Enter any number value to insert into the list: ";
     float insertValue;
     cin >> insertValue;
     insertNode(head, insertValue);
@@ -107,6 +107,18 @@ void addToFront(Node *&head, float value)
     newNode->value = value;
     newNode->next = head;
     head = newNode;
+
+    // Checks if number is positive
+    if (value >= 0) 
+    {
+        cout << value << " added to the front of the list.\n";
+    } 
+    else 
+    {
+        cout << value << " is not a positive number. Node not added. Try again.\n" << endl;
+        // stops program.
+        exit(1);
+    }
 }
 
 // Function to add a node to the tail of the list
@@ -127,6 +139,18 @@ void addToTail(Node *&head, float value)
             current = current->next;
         }
         current->next = newNode;
+    }
+
+    // Checks if number is positive
+    if (value >= 0) 
+    {
+        cout << value << " added to the front of the list.\n";
+    } 
+    else 
+    {
+        cout << value << " is not a positive number. Node not added. Try again.\n";
+        // stops program.
+        exit(1);
     }
 }
 
@@ -150,6 +174,9 @@ void deleteNode(Node *&head, float value)
         prev->next = current->next;
         delete current;
     }
+    else {
+        cout << value << " not found in the list. No node deleted.\n";
+    }
 }
 
 // Function to insert a node
@@ -168,6 +195,18 @@ void insertNode(Node *&head, float value)
     }
     current->next = newNode;
     newNode->next = nullptr;
+
+    // Checks if number is positive
+    if (value >= 0) 
+    {
+        cout << value << " added to the list.\n";
+    } 
+    else 
+    {
+        cout << value << " is not a positive number. Node not added. Try again.\n";
+        // stops program.
+        exit(1);
+    }
 }
 
 // Function to delete the entire linked list
