@@ -51,8 +51,8 @@ int main() {
     }
     output(head);
 
-    cout << "Note to user: only positive numbers will be added to the list.\n" 
-         << "If a negative number is entered, the program will stop and you'll have to restart over.\n" << endl;
+    cout << "Note to user: Only positive numbers will be added to the list.\n" 
+         << "If a negative number is entered, the program will stop and you'll have to restart it.\n" << endl;
 
     // Adds a node to the front of the list
     cout << "Enter any number value to add to the front of the list: ";
@@ -76,7 +76,7 @@ int main() {
     output(head);
 
     // Inserts a node into the list
-    cout << "Enter any number value to insert into the list: ";
+    cout << "Enter any number value to insert into the list (Adds a number to the end): ";
     float insertValue;
     cin >> insertValue;
     insertNode(head, insertValue);
@@ -85,7 +85,7 @@ int main() {
     // Deletes the entire linked list
     deleteList(head);
     head = nullptr;
-    cout << "List deleted.\n";
+    cout << "List deleted. See you next time!\n";
     cout << endl;
 
     return 0;
@@ -120,7 +120,7 @@ void addToFront(Node *&head, float value)
     } 
     else 
     {
-        cout << value << " is not a positive number. Node not added. Try again.\n" << endl;
+        cout << value << " is not a positive number. Node not added. Restart the program to try again.\n" << endl;
         // stops program.
         exit(1);
     }
@@ -153,7 +153,7 @@ void addToTail(Node *&head, float value)
     } 
     else 
     {
-        cout << value << " is not a positive number. Node not added. Try again.\n";
+        cout << value << " is not a positive number. Node not added. Restart the program to try again.\n";
         // stops program.
         exit(1);
     }
@@ -208,7 +208,7 @@ void insertNode(Node *&head, float value)
     } 
     else 
     {
-        cout << value << " is not a positive number. Node not added. Try again.\n";
+        cout << value << " is not a positive number. Node not added. Restart the program to try again.\n";
         // stops program.
         exit(1);
     }
